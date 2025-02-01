@@ -1,12 +1,13 @@
 from app.backend.db import Base
 from sqlalchemy import Column, ForeignKey, Integer, String, Boolean
 from sqlalchemy.orm import relationship
-from app.models import *
-from slugify import slugify
+from app.models.user import User
+# from slugify import slugify
 
 
 class Task(Base):
     __tablename__ = "tasks"
+
     __table_args__ = {'keep_existing': True}
     id = Column(Integer, primary_key=True, index=True)
     title = Column(String)
@@ -21,6 +22,3 @@ class Task(Base):
 
 from sqlalchemy.schema import CreateTable
 print(CreateTable(Task.__table__))
-
-# from sqlalchemy.schema import CreateTable
-# print(CreateTable(User.__table__))
