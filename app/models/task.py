@@ -1,13 +1,11 @@
 from app.backend.db import Base
-from sqlalchemy import Column, ForeignKey, Integer, String, Boolean
+from sqlalchemy import Column, ForeignKey, Integer, String, Boolean, Float
 from sqlalchemy.orm import relationship
 from app.models.user import User
-# from slugify import slugify
 
 
 class Task(Base):
     __tablename__ = "tasks"
-
     __table_args__ = {'keep_existing': True}
     id = Column(Integer, primary_key=True, index=True)
     title = Column(String)

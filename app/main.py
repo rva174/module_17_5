@@ -1,11 +1,19 @@
-from app.backend.db import Base
+# from app.backend.db import Base
+# from fastapi import FastAPI
+# from app.routers.user import user
+# from app.routers.task import task
+# from sqlalchemy import create_engine
+
+# -*- coding: utf-8 -*-
 from fastapi import FastAPI
 from app.routers.user import user
 from app.routers.task import task
-from sqlalchemy import create_engine
+
+
+
 
 # import logging
-#
+#python - m
 # logging.getLogger("uvicorn").handlers.clear()
 
 
@@ -23,6 +31,9 @@ async def welcome():
 
 app.include_router(user)
 app.include_router(task)
+
+#from sqlalchemy.schema import CreateTable
+#print(CreateTable(Task.__table__))
 
 # if __name__=="__main__":
 #     import uvicorn
